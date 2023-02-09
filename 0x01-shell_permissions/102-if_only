@@ -1,10 +1,3 @@
 #!/bin/bash
-
-# check the current owner of the file "hello"
-current_owner=$(ls -l hello | awk '{print $3}')
-
-# change the owner of the file "hello" to "betty" if it is owned by "guillaume"
-if [ $current_owner == "guillaume" ]; then
-  sudo chown betty hello
- 
-fi
+#!/bin/bash
+chown --from=guillaume betty hello
